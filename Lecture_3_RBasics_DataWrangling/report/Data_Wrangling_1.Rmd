@@ -1,5 +1,5 @@
 ---
-title: "Data_Wrangling"
+title: "Data Wrangling (1) Demo"
 author: "Haohan Chen"
 date: '`r Sys.Date()`'
 output: html_document
@@ -19,9 +19,34 @@ library(tidyverse)
 
 ## Load data
 
-This section loads the VDem dataset and describe its basic information
+This section loads the VDEM dataset and describe its basic information
 
 ```{r}
-
+list.files("data/raw_data/") # List files in the raw_data folder
+d <- read_csv("data/raw_data/V-Dem-CY-Full+Others-v13.csv") # Load 
 
 ```
+
+## Check Basic Information of the Dataset
+
+```{r}
+dim(d)
+```
+
+## Select Variables of Interest
+
+```{r}
+d_s <- d |>
+  select(country_name, country_id, year, v2x_polyarchy, e_gdp, e_gdppc)
+```
+
+## Rename Variables of Interest
+
+```{r}
+d_s |>
+  rename("electral_democracy_idx" = "v2x_polyarchy",
+         "gdp" = "e_gdp", 
+         "gdppc" = "e_gdppc")
+```
+
+## Filter Observations of Interest
