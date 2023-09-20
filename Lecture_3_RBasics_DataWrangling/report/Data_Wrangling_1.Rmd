@@ -1,0 +1,27 @@
+---
+title: "Data_Wrangling"
+author: "Haohan Chen"
+date: '`r Sys.Date()`'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load packages
+
+This section loads the packages we need in this lecture.
+
+```{r}
+library(tidyverse)
+```
+
+## Load data
+
+This section loads the VDem dataset and describe its basic information
+
+```{r}
+
+
+```
