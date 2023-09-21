@@ -23,7 +23,6 @@ This section loads the VDEM dataset and describe its basic information
 
 ```{r}
 d <- read_csv("data/raw_data/vdem/vdem_1999_2022.csv")
-
 ```
 
 ## Check Basic Information of the Dataset
@@ -32,20 +31,29 @@ d <- read_csv("data/raw_data/vdem/vdem_1999_2022.csv")
 dim(d)
 ```
 
-## Select Variables of Interest
+## Select Variables (Columns) of Interest
 
 ```{r}
 d_s <- d |>
   select(country_name, country_id, year, v2x_polyarchy, e_gdp, e_gdppc)
+
+d_s
 ```
 
 ## Rename Variables of Interest
 
 ```{r}
+
 d_s |>
   rename("electral_democracy_idx" = "v2x_polyarchy",
          "gdp" = "e_gdp", 
          "gdppc" = "e_gdppc")
 ```
 
-## Filter Observations of Interest
+## Filter Observations (Rows) of Interest
+
+For our analysis, we want to focus on data points from 2010 to 2020
+
+```{r}
+d_s_2010_2020 <- d_s |> filter(year >= 2010 & year <= 2020)
+```

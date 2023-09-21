@@ -174,3 +174,20 @@ d <- read_csv("data/raw_data/vdem/vdem_1999_2022.csv")
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 d <- read_csv("data/raw_data/vdem/vdem_1999_2022.csv")
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+d <- read_csv("data/raw_data/vdem/vdem_1999_2022.csv")
+View(d)
+dim(d)
+d <- read_csv("data/raw_data/vdem/vdem_1999_2022.csv")
+library(tidyverse)
+d_s <- d |>
+select(country_name, country_id, year, v2x_polyarchy, e_gdp, e_gdppc)
+d_s |>
+rename("electral_democracy_idx" = "v2x_polyarchy",
+"gdp" = "e_gdp",
+"gdppc" = "e_gdppc")
+d_s
+d_s_2010_2020 <- d_s |> filter(year >= 2010 & year <= 2020)
+git status -uno
+git status -uno
