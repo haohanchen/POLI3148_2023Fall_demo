@@ -22,8 +22,7 @@ library(tidyverse)
 This section loads the VDEM dataset and describe its basic information
 
 ```{r}
-list.files("data/raw_data/") # List files in the raw_data folder
-d <- read_csv("data/raw_data/V-Dem-CY-Full+Others-v13.csv") # Load 
+d <- read_csv("data/raw_data/vdem/vdem_1999_2022.csv")
 
 ```
 
