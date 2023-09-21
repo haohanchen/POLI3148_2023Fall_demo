@@ -1,3 +1,6 @@
+# Large data files
+large_do_not_push_to_github/
+
 # History files
 .Rhistory
 .Rapp.history
